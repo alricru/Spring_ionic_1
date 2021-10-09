@@ -1,27 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Bicycle } from '../models/bicycle';
-import { BicyclesService } from '../services/bicycles.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage {
 
-  public bikes: Array<Bicycle> = [];
-
-  constructor(private router: Router, private bicycleService: BicyclesService) {}
-  
-  ngOnInit(): void {
-    this.bicycleService.getBicycles().subscribe((b: Array<Bicycle>) => {
-      this.bikes = b;
-    })
-  }
-
-  goToOtherPage(){
-    this.router.navigateByUrl("/other-page");
-  }
+  constructor() {}
 
 }

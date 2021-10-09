@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Juegos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of Users">
+      <ion-label>
+        <h2>Name: {{user.name}}</h2>
+        <h3>Genre: {{user.genre}}</h3>
+        <h3>Year: {{user.year}}</h3>
+        <h3>Platform: {{user.platform}}</h3>
+        <h3>Pegi: {{user.pegi}}</h3>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/update/', user.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+        <button ion-button clear (click)="removeUser(user)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

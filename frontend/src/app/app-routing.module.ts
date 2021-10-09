@@ -8,12 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'list',
     pathMatch: 'full'
   },
   {
-    path: 'other-page',
-    loadChildren: () => import('./other-page/other-page.module').then( m => m.OtherPagePageModule)
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'update',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
   },
 ];
 
